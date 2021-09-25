@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Mattia Valzelli</title>
-    <link>https://mvalzelli.com/</link>
-    <description>Recent content on Mattia Valzelli</description>
+    <title>Posts on Mattia Valzelli</title>
+    <link>https://mvalzelli.com/posts/</link>
+    <description>Recent content in Posts on Mattia Valzelli</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 25 Sep 2021 16:54:49 +0200</lastBuildDate><atom:link href="https://mvalzelli.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 25 Sep 2021 16:54:49 +0200</lastBuildDate><atom:link href="https://mvalzelli.com/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Xcode Does Not Handle Git `includeIf`</title>
       <link>https://mvalzelli.com/posts/2021/09/25/xcode-does-not-handle-git-includeif/</link>

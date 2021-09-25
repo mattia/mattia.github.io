@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xcode Does Not Handle Git `includeIf` - Mattia Valzelli</title>
+    <meta name="author" content="Mattia Valzelli">
+    <meta name="description" content="My website"
+    >
+
+    
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    
+    <link rel="stylesheet" href="/css/base.min.abadb7f12c1fafe3665f52e99f7f8e3b14bcbcb42a83c9368c59445d63ded660.css">
+
+    <script src="https://kit.fontawesome.com/9df1c8489e.js" crossorigin="anonymous"></script>
+</head><body class="bg-white  max-w-6xl mx-auto"><header class="my-8 bg-white">
+    <div class="my-0 mx-auto w-4/5 items-baseline flex flex-col md:flex-row justify-between"><h1 class="text-black font-bold text-xl hover:underline no-underline "><a href="/">Mattia Valzelli</a></h1><div class="flex-grow"></div><nav class="mx-auto px-10">
+     
+    
+    <a class="py-1 px-4 md:px-1 text-center no-underline text-gray-900" href="https://twitter.com/mvalzelli" title="" target="_blank">
+        <i class="fab fa-twitter"></i>
+    </a>
+     
+    
+    <a class="py-1 px-4 md:px-1 text-center no-underline text-gray-900" href="https://github.com/mattia" title="" target="_blank">
+        <i class="fab fa-github"></i>
+    </a>
+    
+</nav>    
+<nav>
+    
+    
+        
+        <a class="py-1 px-4 md:px-1 text-center no-underline text-gray-900" href="/" title="The home page">Home</a>
+        
+    
+        
+        <a class="py-1 px-4 md:px-1 text-center no-underline text-gray-900" href="/posts/" title="This is the blog section">Posts</a>
+        
+    
+        
+        <a class="py-1 px-4 md:px-1 text-center no-underline text-gray-900" href="/about/" title="This is the about page">About</a>
+        
+    
+</nav></div>
+</header><div class="w-4/5 my-0 mx-auto">
+            <main>
+<article class="post">
+    <header class="py-4">
+        <h1 class="font-bold text-lg">Xcode Does Not Handle Git `includeIf`</h1>
+        <div class="font-sans font-normal text-gray-400 text-sm flex flex-col md:flex-row">
+            <div class="py-1 md:pr-2"><i class="far fa-calendar-alt"></i> Posted<time>September 25, 2021</time></div>
+            <div class="py-1 md:px-2"><i class="fas fa-user"></i> by Mattia Valzelli</div>
+            <div class="py-1 md:pl-2"><i class="fab fa-readme"></i> 3 min.</div>
+        </div>
+        <p class="py-2">
+            <span>
+                
+                    <a class="tag" href="/tags/xcode">Xcode</a>
+                
+                    <a class="tag" href="/tags/git">Git</a>
+                
+            </span>
+        </p>
+    </header>
+
+    <section class="py-4 space-y-6 text-justify">
+        <p>I’ve been using the <a href="https://developer.apple.com/documentation/swift_packages/adding_package_dependencies_to_your_app">Swift Package Manager</a> Xcode integration since its introduction in Xcode 11 but was constantly hitting the following error while trying to check out any dependency.</p>
+<p><img src="/images/xcode-git-includeif-error.png" alt="Xcode showing the message when trying to add a Swift Package Manager dependency"></p>
+<p>The only way to add it to the project was to star it in GitHub and select it from the list.
+A couple of months ago I was fed up with this situation and promised myself that I would dive deep to understand why it was happening, given that every other person I know using the integration was functioning perfectly.</p>
+<p>After a couple hours, with no progress I tried to setup Xcode on my home machine, an iMac that was never setup for development. To my surprise the SPM integration was working flawlessly!</p>
+<p>So the problem was my development machine. To understand what could possibly be the problem I started to dived the problem into layers, staring with the most user facing, Xcode.
+The Xcode version used on the working machine was the same as the development one, so that was not it. Even the GitHub integration used in the Xcode accounts setting page was the same, down to the same key that I imported into the iMac from the development machine. So Xcode seemed to be ok (spoiler: it wasn’t).</p>
+<p>The next suspect was <code>git</code> : on the working Mac the only git instance was the one included with Xcode, but on the development Mac I had also installed a version from Homebrew.
+While looking in the Xcode “Source Control” settings I noticed that Xcode was not picking up the “Author Name” and “Author Email” settings, but correctly using the “Ignored Files” defined in my <code>~/.gitignore</code>.</p>
+<p>That seemed strange to me, so I started looking into my <code>~/.gitconfig</code> file, to understand why email and author where not picked up by Xcode.
+The email and author were not directly included in the configuration file, but they were loading conditionally by using the<a href="https://git-scm.com/docs/git-config#_includes"> <code>includeIf</code></a>  directive (defined for different project paths). Given that was the only noteworthy section in the <code>gitconfig</code> file I tried embedding the email and author field directly, and boom the error was gone (and the Xcode source control settings were correctly displaying)!</p>
+<p>So it seems that Xcode does not like the <code>includeIf</code> directive in the configuration file.</p>
+
+    </section>
+
+    <section class="related">
+        
+        
+    </section>
+</article>
+
+            </main>
+        </div><footer class="my-12 bg-white text-left">
+    <div class=" text-black flex">
+        <div class=" my-0 mx-auto w-4/5 items-baseline flex flex-col md:flex-row">
+            <p class="font-bold">
+                © 2021
+                <a class="no-underline" href="https://mvalzelli.com/">Mattia Valzelli</a>
+            </p>
+            <p class="block mx-3">Powered by
+                <a href="https://gohugo.io">Hugo</a>
+            </p>
+        </div>
+    </div>
+</footer></body>
+</html>

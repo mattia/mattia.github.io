@@ -4,8 +4,48 @@
   
   <url>
     <loc>https://mvalzelli.com/</loc>
-    <lastmod>2020-12-31T16:19:00+01:00</lastmod>
+    <lastmod>2021-09-25T16:54:49+02:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mvalzelli.com/posts/2021/</loc>
+    <lastmod>2021-09-25T16:54:49+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mvalzelli.com/categories/</loc>
+    <lastmod>2021-09-25T16:54:49+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mvalzelli.com/tags/git/</loc>
+    <lastmod>2021-09-25T16:54:49+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mvalzelli.com/posts/</loc>
+    <lastmod>2021-09-25T16:54:49+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mvalzelli.com/categories/software-development/</loc>
+    <lastmod>2021-09-25T16:54:49+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mvalzelli.com/tags/xcode/</loc>
+    <lastmod>2021-09-25T16:54:49+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mvalzelli.com/posts/2021/09/25/xcode-does-not-handle-git-includeif/</loc>
+    <lastmod>2021-09-25T16:54:49+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mvalzelli.com/year/</loc>
+    <lastmod>2021-09-25T16:54:49+02:00</lastmod>
   </url>
   
   <url>
@@ -23,19 +63,11 @@
   </url>
   
   <url>
-    <loc>https://mvalzelli.com/categories/</loc>
-  </url>
-  
-  <url>
     <loc>https://mvalzelli.com/main/</loc>
   </url>
   
   <url>
     <loc>https://mvalzelli.com/projects/</loc>
-  </url>
-  
-  <url>
-    <loc>https://mvalzelli.com/year/</loc>
   </url>
   
 </urlset>
