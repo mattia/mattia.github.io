@@ -6,7 +6,18 @@
     <description>Recent content in Posts on Mattia Valzelli</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 25 Sep 2021 16:54:49 +0200</lastBuildDate><atom:link href="https://mvalzelli.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 18 Nov 2021 13:55:57 +0100</lastBuildDate><atom:link href="https://mvalzelli.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Concentrate Your Time</title>
+      <link>https://mvalzelli.com/posts/2021/11/18/concentrate-your-time/</link>
+      <pubDate>Thu, 18 Nov 2021 13:55:57 +0100</pubDate>
+      
+      <guid>https://mvalzelli.com/posts/2021/11/18/concentrate-your-time/</guid>
+      <description>After reading Atomic Habits from James Clear last year I subscribed to his “3-2-1” newsletter. It’s been a good read in my Thursday (or on most occasions Friday) routine, or should I say habit? 😀.
+One of the most recent issues of the newsletter is titled “3-2-1: How to approach life, and how to succeed as a writer” and it starts as usual with 3 ideas from the author.
+In this post I would like to expand a little on what struck me the most in the first idea they wrote in the aforementioned issue.</description>
+    </item>
+    
     <item>
       <title>Xcode Does Not Handle Git `includeIf`</title>
       <link>https://mvalzelli.com/posts/2021/09/25/xcode-does-not-handle-git-includeif/</link>
